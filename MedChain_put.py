@@ -13,10 +13,11 @@ data = {
         "frameid": "1x300"
         }
 
-headers = {'Authorization': 'Bearer ' + token, "Content-Type": "application/json", 'data':data}
+requests.put(data=data)
+headers = {'Authorization': 'Bearer ' + token, "Content-Type": "application/json"}
 
 #Call REST API
-response = requests.put(url, data=data, headers=headers)
+response = requests.put(url, data=json.dumps(data), headers=headers)
 
 #Print Response
 print(response.text)
